@@ -1,0 +1,9 @@
+.git
+node_modules
+.next
+média/
+.claude/
+Instructions.md
+Spécifications techniques.md
+*.MOV
+*.mov

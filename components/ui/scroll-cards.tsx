@@ -61,7 +61,7 @@ const CardText: FC<{
   textAlign?: 'left' | 'right';
   imagePosition?: 'left' | 'right';
   review?: { author: string; text: string };
-  badge?: { highlight: string; title: string; subtitle: string };
+  badge?: { highlight: string; title: string; subtitle: string; variant?: 'glass' | 'brown' | 'beige' };
 }> = ({ title, description, textColor, isFirst, segStart, segSize, prevSegSize, progress, service, textPosition = 'bottom', textAlign = 'left', imagePosition, review, badge }) => {
   // Enter: starts at previous card's TRANSITION_POINT
   const enterStart = isFirst
