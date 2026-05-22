@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: #faf5f1;
+    --color-brun: #4e3b2c;
+    --color-brun-light: #6b5545;
+    --color-brun-dark: #3a2b1f;
+    --color-gris: #d6d5d3;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-neutral-900 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading text-brun;
+  }
+
+  ::selection {
+    @apply bg-brun text-cream;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brun px-6 py-3 text-sm font-semibold text-cream transition-all duration-300 hover:bg-brun-dark hover:shadow-lg active:scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-brun px-6 py-3 text-sm font-semibold text-brun transition-all duration-300 hover:bg-brun hover:text-cream active:scale-[0.98];
+  }
+
+  .btn-call {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brun px-6 py-3 text-sm font-semibold text-cream shadow-lg transition-all duration-300 hover:bg-brun-dark hover:shadow-xl active:scale-[0.98];
+  }
+
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 md:py-24 lg:px-8;
+  }
+
+  .container-tight {
+    @apply mx-auto max-w-6xl;
+  }
+}
