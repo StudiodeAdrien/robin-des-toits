@@ -206,11 +206,11 @@ export function ZoomParallax({ images, overlayText, stickyExtend = 0, firstCardT
             </div>
           </div>
 
-          {/* Mobile: horizontal scrolling reviews ABOVE title */}
-          <div className="absolute top-[10vh] inset-x-0 md:hidden overflow-visible">
+          {/* Mobile: reviews slide horizontally (right→left) ABOVE title */}
+          <div className="absolute top-[10vh] inset-x-0 md:hidden px-4 overflow-visible">
             <motion.div
-              style={{ y: fcButtonY, opacity: fcButtonOpacity }}
-              className="pointer-events-auto flex gap-3 overflow-x-auto px-4 pb-2 snap-x snap-mandatory scrollbar-hide overflow-y-visible"
+              style={{ x: fcButtonY, opacity: fcButtonOpacity }}
+              className="pointer-events-auto flex flex-col gap-2 overflow-visible"
             >
               {[
                 { author: 'Jos Van H.', text: "M. Vincent Cardona a récemment remplacé notre toiture. Nous sommes très satisfaits du résultat. Le travail était impeccable." },
@@ -222,7 +222,7 @@ export function ZoomParallax({ images, overlayText, stickyExtend = 0, firstCardT
                   href={GOOGLE_MAPS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block min-w-[75vw] shrink-0 snap-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur-sm"
+                  className="block rounded-xl border border-white/20 bg-white/10 px-4 py-3 backdrop-blur-sm"
                 >
                   <div className="flex items-center gap-2 mb-1.5">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-4 w-4 shrink-0">
