@@ -159,9 +159,9 @@ const CardText: FC<{
 
       {/* Google review card — positioned in brown area, slides left→right */}
       {review && (
-        <div className={`absolute bottom-32 md:bottom-40 px-4 md:px-16 inset-x-0 md:inset-x-auto ${
+        <div className={`absolute bottom-32 md:bottom-40 px-4 md:px-16 inset-x-0 md:inset-x-auto md:w-[50%] ${
           imagePosition === 'right' ? 'md:left-0' : 'md:right-0'
-        }`} style={{ width: `${100 - 50}%` }}>
+        }`}>
           <motion.div style={{ x: reviewX, opacity: reviewOpacity }}>
             <a
               href={GOOGLE_MAPS_URL}
