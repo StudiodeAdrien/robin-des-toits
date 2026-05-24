@@ -26,7 +26,7 @@ export default function Hero() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brun-dark/90 via-brun-dark/70 to-brun-dark/40" />
-        <span className="absolute bottom-2 right-3 text-[10px] text-white/20 select-none pointer-events-none z-10">© Robin des Toits</span>
+        <span className="absolute bottom-2 right-3 text-[6px] sm:text-[10px] text-white/20 select-none pointer-events-none z-10">© Robin des Toits</span>
       </div>
 
       <div className="relative z-10 text-center px-4 py-20">
@@ -46,10 +46,10 @@ export default function Hero() {
             className="mt-6"
           >
             <p className="text-xl text-cream/80 sm:text-2xl lg:text-3xl">
-              Spécialiste{' '}
+              Spécialiste
               <MorphingText
                 texts={specialites}
-                className="inline-block h-[1.2em] w-[18ch] translate-y-[0.26em] align-baseline text-left sm:w-[22ch] lg:w-[24ch] [&_strong]:font-bold [&_strong]:text-cream"
+                className="block h-[1.2em] w-full text-center sm:inline-block sm:w-[22ch] sm:translate-y-[0.26em] sm:align-baseline sm:text-left lg:w-[24ch] [&_strong]:font-bold [&_strong]:text-cream"
               />
             </p>
           </motion.div>

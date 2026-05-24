@@ -20,7 +20,7 @@ export default function ArtisanPresentation() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <span className="absolute bottom-2 right-3 text-[10px] text-white/30 select-none pointer-events-none">© Robin des Toits</span>
+              <span className="absolute bottom-2 right-3 text-[6px] sm:text-[10px] text-white/30 select-none pointer-events-none">© Robin des Toits</span>
             </div>
           </AnimatedSection>
 

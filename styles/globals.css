@@ -28,6 +28,16 @@
   }
 }
 
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brun px-6 py-3 text-sm font-semibold text-cream transition-all duration-300 hover:bg-brun-dark hover:shadow-lg active:scale-[0.98];

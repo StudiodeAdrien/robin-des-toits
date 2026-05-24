@@ -90,7 +90,7 @@ function AnimatedImage({
       <p className="absolute bottom-3 left-3 text-sm font-medium text-cream opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         {alt}
       </p>
-      <span className="absolute bottom-2 right-3 text-[10px] text-white/30 select-none pointer-events-none">
+      <span className="absolute bottom-2 right-3 text-[6px] sm:text-[10px] text-white/30 select-none pointer-events-none">
         © Robin des Toits
       </span>
     </div>

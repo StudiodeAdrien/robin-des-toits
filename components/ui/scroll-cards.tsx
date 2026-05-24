@@ -197,27 +197,27 @@ const CardText: FC<{
       {badge && (
         <div className={`absolute ${
           imagePosition
-            ? `bottom-28 md:bottom-36 ${imagePosition === 'left' ? 'right-0' : 'left-0'}`
-            : 'bottom-28 md:bottom-36 left-0'
-        } px-8 md:px-16`} style={imagePosition ? { width: `${100 - 50}%` } : undefined}>
-          <motion.div style={{ x: reviewX, opacity: reviewOpacity }} className={imagePosition ? 'flex justify-center' : ''}>
-            <div className={`max-w-sm rounded-2xl px-6 py-5 ${
+            ? `bottom-20 md:bottom-36 inset-x-0 md:inset-x-auto ${imagePosition === 'left' ? 'md:right-0 md:left-auto' : 'md:left-0 md:right-auto'}`
+            : 'bottom-20 md:bottom-36 left-0'
+        } px-4 md:px-16`} style={imagePosition ? { width: undefined } : undefined}>
+          <motion.div style={{ x: reviewX, opacity: reviewOpacity }} className="flex justify-center">
+            <div className={`max-w-xs md:max-w-sm rounded-2xl px-4 md:px-6 py-4 md:py-5 ${
               badge.variant === 'brown'
                 ? 'bg-brun border border-brun-dark/30 shadow-lg'
                 : badge.variant === 'beige'
                 ? 'bg-cream border border-brun/10 shadow-lg'
                 : 'border border-white/20 bg-white/10 backdrop-blur-sm'
             }`}>
-              <div className="flex items-center gap-4">
-                <span className={`text-7xl font-bold whitespace-nowrap ${
+              <div className="flex items-center gap-3 md:gap-4">
+                <span className={`text-5xl md:text-7xl font-bold whitespace-nowrap ${
                   badge.variant === 'beige' ? 'text-brun' : 'text-cream'
                 }`}>{badge.highlight}</span>
                 <div>
-                  <p className={`text-sm font-semibold ${
+                  <p className={`text-xs md:text-sm font-semibold ${
                     badge.variant === 'beige' ? 'text-brun-dark' : 'text-white'
                   }`}>{badge.title}</p>
                   {badge.subtitle && (
-                    <p className={`mt-1 text-xs ${
+                    <p className={`mt-1 text-[10px] md:text-xs ${
                       badge.variant === 'beige' ? 'text-brun/60' : 'text-white/60'
                     }`}>{badge.subtitle}</p>
                   )}
@@ -348,32 +348,49 @@ const CardsParallax: FC<CardsParallaxProps> = ({ items, skipFirstImage, skipFirs
           {!(skipFirstImage && i === 0) && (
             <div className="sticky top-0 h-screen w-full">
               {item.imageFit === 'contain' ? (
-                <div className="relative flex h-full w-full" style={{ backgroundColor: '#3a2a1e' }}>
-                  <div
-                    className={`relative h-full ${
-                      item.imagePosition === 'right' ? 'order-2' : 'order-1'
-                    }`}
-                    style={{ width: `${item.imageWidth ?? 55}%` }}
-                  >
+                <>
+                  {/* Mobile: full-bleed image */}
+                  <div className="relative h-full w-full md:hidden overflow-hidden">
                     <Image
-                      className="object-cover"
+                      className="h-full w-full object-cover"
                       src={item.src}
                       alt={item.title}
                       fill
-                      sizes={`${item.imageWidth ?? 55}vw`}
+                      sizes="100vw"
                       priority={i === 0}
                       style={item.imageObjectPosition ? { objectPosition: item.imageObjectPosition } : undefined}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <span className="absolute bottom-2 right-3 text-[6px] text-white/30 select-none pointer-events-none">© Robin des Toits</span>
                   </div>
-                  <div
-                    className={`h-full ${
-                      item.imagePosition === 'right' ? 'order-1' : 'order-2'
-                    }`}
-                    style={{ width: `${100 - (item.imageWidth ?? 55)}%` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <span className="absolute bottom-2 right-3 text-[10px] text-white/30 select-none pointer-events-none">© Robin des Toits</span>
-                </div>
+                  {/* Desktop: split layout */}
+                  <div className="relative hidden md:flex h-full w-full" style={{ backgroundColor: '#3a2a1e' }}>
+                    <div
+                      className={`relative h-full ${
+                        item.imagePosition === 'right' ? 'order-2' : 'order-1'
+                      }`}
+                      style={{ width: `${item.imageWidth ?? 55}%` }}
+                    >
+                      <Image
+                        className="object-cover"
+                        src={item.src}
+                        alt={item.title}
+                        fill
+                        sizes={`${item.imageWidth ?? 55}vw`}
+                        priority={i === 0}
+                        style={item.imageObjectPosition ? { objectPosition: item.imageObjectPosition } : undefined}
+                      />
+                    </div>
+                    <div
+                      className={`h-full ${
+                        item.imagePosition === 'right' ? 'order-1' : 'order-2'
+                      }`}
+                      style={{ width: `${100 - (item.imageWidth ?? 55)}%` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <span className="absolute bottom-2 right-3 text-[6px] sm:text-[10px] text-white/30 select-none pointer-events-none">© Robin des Toits</span>
+                  </div>
+                </>
               ) : (
                 <div className="relative h-full w-full overflow-hidden">
                   <Image
@@ -385,7 +402,7 @@ const CardsParallax: FC<CardsParallaxProps> = ({ items, skipFirstImage, skipFirs
                     priority={i === 0}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <span className="absolute bottom-2 right-3 text-[10px] text-white/30 select-none pointer-events-none">© Robin des Toits</span>
+                  <span className="absolute bottom-2 right-3 text-[6px] sm:text-[10px] text-white/30 select-none pointer-events-none">© Robin des Toits</span>
                 </div>
               )}
             </div>
