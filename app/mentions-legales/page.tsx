@@ -16,7 +16,7 @@ export default function MentionsLegalesPage() {
         <p>
           <strong>Robin des Toits</strong>
           <br />
-          Dirigeant : Vincent Cardonna
+          Dirigeant : Vincent Cardona
           <br />
           SIRET : 527 744 957
           <br />

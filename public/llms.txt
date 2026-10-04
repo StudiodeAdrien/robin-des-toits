@@ -5,7 +5,7 @@
 ## Entreprise
 
 - Nom : Robin des Toits
-- Dirigeant : Vincent Cardonna
+- Dirigeant : Vincent Cardona
 - SIRET : 527 744 957
 - Téléphone : 06 06 44 17 81
 - Email : 82@neuf.fr

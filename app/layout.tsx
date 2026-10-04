@@ -78,7 +78,7 @@ export default function RootLayout({
     email: '82@neuf.fr',
     founder: {
       '@type': 'Person',
-      name: 'Vincent Cardonna',
+      name: 'Vincent Cardona',
     },
     foundingDate: '2010-10-21',
     areaServed: [

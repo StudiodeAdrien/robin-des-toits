@@ -15,7 +15,7 @@ export default function ArtisanPresentation() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
               <Image
                 src="/images/artisan.jpg"
-                alt="Vincent Cardonna — Artisan couvreur charpentier"
+                alt="Vincent Cardona — Artisan couvreur charpentier"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -27,7 +27,7 @@ export default function ArtisanPresentation() {
           {/* Texte */}
           <AnimatedSection delay={0.2}>
             <h2 className="font-artisan font-bold text-4xl text-brun-dark sm:text-5xl">
-              Vincent Cardonna
+              Vincent Cardona
             </h2>
             <p className="mt-2 text-sm font-semibold uppercase tracking-widest text-brun/60">
               Artisan couvreur charpentier
