@@ -45,13 +45,13 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.3 }}
             className="mt-6"
           >
-            <p className="text-xl text-cream/80 sm:text-2xl lg:text-3xl">
+            <div className="text-xl text-cream/80 sm:text-2xl lg:text-3xl">
               Spécialiste{' '}
               <MorphingText
                 texts={specialites}
                 className="block h-[1.2em] w-full text-center sm:inline-block sm:w-[22ch] sm:translate-y-[0.26em] sm:align-baseline sm:text-left lg:w-[24ch] [&_strong]:font-bold [&_strong]:text-cream"
               />
-            </p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

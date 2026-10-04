@@ -20,33 +20,8 @@ const cities: City[] = [
   { name: "Pont-l'Abbé-d'Arnoult", lat: 45.8255, lng: -0.8670 },
 ]
 
-const mapStyle: maplibregl.StyleSpecification = {
-  version: 8,
-  sources: {
-    osm: {
-      type: 'raster',
-      tiles: [
-        'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
-        'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
-      ],
-      tileSize: 256,
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
-    },
-  },
-  layers: [
-    {
-      id: 'osm',
-      type: 'raster',
-      source: 'osm',
-      paint: {
-        'raster-saturation': -0.3,
-        'raster-brightness-min': 0.1,
-        'raster-contrast': -0.1,
-      },
-    },
-  ],
-}
+// CARTO basemaps now require an API key; OpenFreeMap is free and keyless
+const MAP_STYLE = 'https://tiles.openfreemap.org/styles/positron'
 
 export function InterventionMap() {
   const mapContainer = useRef<HTMLDivElement>(null)
@@ -58,7 +33,7 @@ export function InterventionMap() {
 
     map.current = new maplibregl.Map({
       container: mapContainer.current,
-      style: mapStyle,
+      style: MAP_STYLE,
       center: [-0.72, 45.88],
       zoom: 7.5,
       minZoom: 7,

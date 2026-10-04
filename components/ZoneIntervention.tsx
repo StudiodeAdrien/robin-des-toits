@@ -1,7 +1,16 @@
 'use client'
 
 import AnimatedSection from './AnimatedSection'
-import { InterventionMap } from './ui/intervention-map'
+import dynamic from 'next/dynamic'
+
+// maplibre-gl is heavy: keep it out of the initial bundle
+const InterventionMap = dynamic(
+  () => import('./ui/intervention-map').then((m) => m.InterventionMap),
+  {
+    ssr: false,
+    loading: () => <div className="h-[400px] rounded-2xl border border-gris/30 bg-cream sm:h-[500px]" />,
+  }
+)
 
 export default function ZoneIntervention() {
   return (
