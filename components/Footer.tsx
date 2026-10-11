@@ -114,17 +114,6 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Robin des Toits — SIRET 527 744
             957 — Tous droits réservés
           </p>
-          <p className="mt-3 text-cream/25">
-            Site web réalisé par{' '}
-            <a
-              href="https://studiodeadrien.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline transition-colors hover:text-cream/50"
-            >
-              Studio de Adrien
-            </a>
-          </p>
         </div>
       </div>
     </footer>

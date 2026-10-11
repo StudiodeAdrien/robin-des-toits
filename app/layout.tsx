@@ -4,6 +4,7 @@ import localFont from 'next/font/local'
 import '@/styles/globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import StudioBandeau from '@/components/StudioBandeau'
 import FloatingCallButton from '@/components/FloatingCallButton'
 import SmoothScroll from '@/components/SmoothScroll'
 
@@ -127,6 +128,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <StudioBandeau />
         <FloatingCallButton />
       </body>
     </html>
